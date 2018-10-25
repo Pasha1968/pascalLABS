@@ -1,0 +1,13 @@
+program zubsplusom;
+var x,y,per:Real;
+begin
+	writeln('enter x');
+	read(x);
+    per:=256;
+	while per >=2 do
+		 begin
+			y:=sqr(x)+per/sqr(x);
+			per:=per/2;
+		 end;
+	writeln(y);
+end.
