@@ -1,5 +1,4 @@
 program doublefact;
-uses crt;
 var fac1,f,i,n:integer;
  begin
  writeln('enter n');
