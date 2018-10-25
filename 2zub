@@ -9,5 +9,6 @@ begin
 			y:=sqr(x)+per/sqr(x);
 			per:=per/2;
 		 end;
+	y:=x/y;
 	writeln(y);
 end.
