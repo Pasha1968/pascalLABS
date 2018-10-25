@@ -1,6 +1,6 @@
 program doublefact;
 uses crt;
-var fac1,fac2,f,i,n:integer;
+var fac1,f,i,n:integer;
  begin
  writeln('enter n');
  readln(n);
