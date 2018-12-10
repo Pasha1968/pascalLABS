@@ -7,6 +7,12 @@
 18.Прізвища (в алфавітному порядку) та ініціали тих студенток, вік яких є одночасно
 найпоширенішими.}
 
+//uses fgl;
+
+
+//type TMap = specialize TFPGMap<Byte, Byte>;
+
+
 type studentdata=record
   Name:string;
   surname:string;
@@ -17,40 +23,60 @@ type studentdata=record
 end;
 var student:array of studentdata;
     x:array of studentdata;
+    usegostud:byte;
 
 procedure EnterData(x:array of studentdata);
 var i:byte;
     count:byte;
+    bufStudent: studentdata;
     student:array of studentdata;
 begin
   writeln('skolko studentov?');
   readln(i);
-  for count:=1 to i do
+  setLength(student, i);
+  for count:=0 to i - 1 do
   begin
     writeln('enter Name');
-    readln(student[i].Name);
+    readln(bufStudent.Name);
     writeln('enter surname');
-    readln(student[i].surname);
+    readln(bufStudent.surname);
     writeln('enter patronymic');
-    readln(student[i].patronymic);
+    readln(bufStudent.patronymic);
     writeln('enter sex M or F');
-    readln(student[i].sex);
-    if student[i].sex <> 'F' then
+    readln(bufStudent.sex);
+    if bufStudent.sex <> 'F' then
       begin
-       if student[i].sex <> 'M' then
+       if bufStudent.sex <> 'M' then
         begin
           writeln('ERROR there are only 2 genders M or F');
           break;
         end;
       end;
     writeln('enter age');
-    readln(student[i].age);
+    readln(bufStudent.age);
     writeln('enter course');
-    readln(student[i].course);
+    readln(bufStudent.course);
+    student[count] := bufStudent;
+    //bufStudent:=nil;
   end;
   x:=student;
+  usegostud:=i;
+end;
+
+
+procedure filtr(x:array of studentdata);
+var i:byte;
+    mass:array[1..2,byte] of integer;
+    //x:TMap;
+    
+begin 
+    for i:=0 to usegostud do
+      begin
+        
+      end;
 end;
 
 begin
-  EnterData(x);
+  EnterData(student);
+  print();
 end.
