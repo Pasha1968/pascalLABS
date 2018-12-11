@@ -4,9 +4,8 @@
 <прізвище>,<ім'я>,<по-батькові>,<стать>,<вік>,<курс>
 Скласти програму з процедурами, яка вводить цю інформацію та друкує
 такі дані:
-19.Прізвища та курс студентів, вік яких є більший визначеного.
-&&???(18.Прізвища (в алфавітному порядку) та ініціали тих студенток, вік яких є одночасно
-найпоширенішими.)???&&&}
+18.Прізвища та курс студентів, вік яких є більший визначеного.
+&&???}
 
 //uses fgl;
 
@@ -23,7 +22,7 @@ type studentdata=record
   course:1..5;
 end;
 var student:array of studentdata;
-    //x:array of studentdata;
+    datasS:array of studentdata;
     usegostud:byte;
 
 procedure EnterData(x:array of studentdata);
@@ -60,7 +59,7 @@ begin
     student[count] := bufStudent;
     //bufStudent:=null;
   end;
-  x:=student;
+  datasS:=student;
   usegostud:=i;
 end;
 
@@ -69,6 +68,7 @@ procedure filtr(x:array of studentdata);
 var i:byte;
     ages:byte;
     bufStudent: studentdata;
+    s2:string;
     //mass:array[1..2,byte] of integer;
     //x:TMap;
     //создать свою мапу
@@ -80,13 +80,18 @@ begin
       setLength(student, usegostud);
       print('older then & do you want to see');
       readln(ages);
-      for i:=0 to usegostud - 1 do
+      for i:=0 to usegostud -1  do
       begin
-      bufStudent.age := student[i].age ;
+      bufStudent := datasS[i];
+      //print(bufStudent.age);
         if bufStudent.age > ages then
         begin
-        print('Surname of student is',bufStudent.surname,' ');
-        println('course of student is',bufStudent.course);
+        s2:= copy(bufStudent.Name,1,1);
+        println();
+        print('Surname of student is',bufStudent.surname,s2);
+       // print(s2,'.');
+        print('course of student is',bufStudent.course);
+        
         end;
       end;
 end;
