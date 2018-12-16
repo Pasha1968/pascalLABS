@@ -4,7 +4,11 @@
 type
   Tinf = Integer;
  
-procedure Checkandel(var L : List<Tinf>) := L := L.Distinct.ToList;
+procedure Checkandel(var L : List<Tinf>);
+begin
+L := L.Distinct.ToList;
+//L.Distinct.ToLinkedList;
+end;
   
   
 var i,n:integer;
