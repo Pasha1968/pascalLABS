@@ -2,11 +2,11 @@
 //http://pascal.net.ru/GetMem
 
 type
-  Tinf=integer; {тип данных, который будет храниться в элементе стека}
-  List=^TList;  {Указатель на элемент типа TList}
-  TList=record {А это наименование нашего типа "запись" обычно динамические структуры описываются через запись}
-    data:TInf;  {данные, хранимые в элементе}
-    next:List;   {указатель на следующий элемент}
+  Tinf=integer;
+  List=^TList;  
+  TList=record 
+    data:TInf;  
+    next:List;   
   end;
   type fail=file of integer;
 
