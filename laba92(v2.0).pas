@@ -1,5 +1,7 @@
 ﻿program laba92;
 //https://wm-help.net/lib/b/book/1298783189/137#lt__1
+//https://habr.com/post/247015/(js)
+//Компараторы - объекты, которые позволяют сравнивать другие объекты.
 
 type
   Tinf = Integer;
